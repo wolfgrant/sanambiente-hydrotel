@@ -1,0 +1,1 @@
+export const apiBaseUrl = "https://data.hyquestsolutions.co.nz/HydWebService/HydWebService.dll/"
