@@ -1,1 +1,1 @@
-export const apiBaseUrl = "https://data.hyquestsolutions.co.nz/HydWebService/HydWebService.dll/"
+export const apiBaseUrl = "http://34.235.31.219:704/HydWebService/HydWebService.dll/"
