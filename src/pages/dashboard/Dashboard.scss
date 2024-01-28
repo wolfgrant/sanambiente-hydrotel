@@ -1,0 +1,18 @@
+.container-general {
+    width: 100%;
+    margin-top: 69px;
+    flex: 1;
+
+    @media screen and (max-width: 768px) {
+        margin-top: 112px;
+    }
+
+    &__cont-logged-data {
+        height: 460px;
+        width: 100%;
+    }
+}
+
+.subtitle {
+    padding-left: 30px;
+}
