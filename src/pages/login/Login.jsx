@@ -3,7 +3,7 @@ import React from 'react';
 import './Login.scss';
 import useInputChange from '../../hooks/useInputChange.js';
 import { sqlInyectionRegex } from '../../configs/regex';
-import useLogin from '../../hooks/useLogin.js'
+import useGetLogin from '../../hooks/useGetLogin.js'
 
 function Login() {
 
@@ -12,7 +12,7 @@ function Login() {
         password: ''
     });
 
-    const { loginError, loginUser } = useLogin();
+    const { loginError, loginUser } = useGetLogin();
     const regexSQL = sqlInyectionRegex
 
     const handleSubmit = (event) => {

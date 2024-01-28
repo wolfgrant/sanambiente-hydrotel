@@ -1,24 +1,19 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from 'react'
-import useGetLastItems from '../../hooks/useGetLastItems';
+import React, { useEffect, useState } from 'react'
+import useGetLastValue from '../../hooks/useGetLastValue';
 import './Dashboard.scss'
+import useGetTreeItems from '../../hooks/useGetTreeItems';
+import useGetLoggedData from '../../hooks/useGetLoggedData';
 
 
 function Dashboard() {
 
-    const { loading, treeItems, getLastItemsList } = useGetLastItems();
+    const { loading, lastValue, errorLast, parameterApi, setParameterApi } = useGetLastValue();
+    const { loadingTree, treeItems, errorTree, parameterApiTree, setParameterApiTree } = useGetTreeItems();
+    const { loadingLogged, loggedData, errorLogged, parameterApiLogged, setParameterApiLogged } = useGetLoggedData();
 
-    useEffect(() => {
-        getLastItemsList(localStorage.getItem('token'))
-        const intervalId = setInterval(() => {
-            // Tu lógica aquí, este código se ejecutará cada 5 segundos
-            console.log("Se realiza consutla cada 5 minutos");
-            getLastItemsList(localStorage.getItem('token'))
-        }, 5000 /* 300000 */);
-
-        return () => clearInterval(intervalId);
-    }, [])
     const encripted = localStorage.getItem('token')
+    
     return (
         <h1>{encripted}</h1>
     );
